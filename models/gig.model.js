@@ -1,32 +1,33 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const gigSchema = new Schema({
-  userId:{
-    type: String,
-    required: true    
-  },
-  title:{
-    type: String,
-    required: true    
-  },
-  desc:{
-    type: String,
-    required: true    
-  },
-  totalStars:{
-    type: Number,
-    default: 0    
-  },
-  starNumber:{
-    type: Number,
-    default: 0    
-  },
-  cat:{
-    type: String,
-    required: true    
-  },
-  price: {
+const gigSchema = new Schema(
+  {
+    userId: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    desc: {
+      type: String,
+      required: true,
+    },
+    totalStars: {
+      type: Number,
+      default: 0,
+    },
+    starNumber: {
+      type: Number,
+      default: 0,
+    },
+    cat: {
+      type: String,
+      required: true,
+    },
+    price: {
       type: Number,
       required: true,
     },
@@ -37,7 +38,7 @@ const gigSchema = new Schema({
     images: {
       type: [String],
       required: false,
-    },    
+    },
     shortTitle: {
       type: String,
       required: true,
@@ -61,8 +62,10 @@ const gigSchema = new Schema({
     sales: {
       type: Number,
       default: 0,
-    }
-},{
-    timestamps: true
-});
-export default mongoose.model("Gig", gigSchema)
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+export default mongoose.model("Gig", gigSchema);
